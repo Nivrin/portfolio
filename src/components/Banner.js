@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useCallback } from 'react'
 import { Container, Row, Col } from "react-bootstrap"
 import headerImg from '../assets/img/header-img.svg'
 import { ConnectButton } from '../components/ConnectButton'
@@ -13,17 +13,7 @@ export const Banner = () => {
     const toRotate = ["Software Developer", "Backend Developer"];
     const period = 2000;
 
-    useEffect(() => {
-        let ticker = setInterval(() => {
-            tick();
-        }, delta);
-        
-        return () => {
-            clearInterval(ticker);
-        };
-    }, [text, delta, tick]);
-    
-    const tick = () => {
+    const tick = useCallback(() => {
         let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
@@ -41,8 +31,18 @@ export const Banner = () => {
             setLoopNum(loopNum + 1);
             setDelta(500);
         }
-    }
+    }, [loopNum, toRotate, isDeleting, text, period]);
 
+    useEffect(() => {
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+        
+        return () => {
+            clearInterval(ticker);
+        };
+    }, [tick, delta]);
+    
 
     return (
         <section className="banner" id="home">
