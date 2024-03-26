@@ -12,8 +12,10 @@ export const Banner = () => {
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
 
+    // Moved 'toRotate' inside the useCallback
     const tick = useCallback(() => {
-        let i = loopNum % toRotate.length; 
+        const toRotate = ["Software Developer", "Backend Developer"];
+        let i = loopNum % toRotate.length;
         let fullText = toRotate[i];
         let updatedText = isDeleting ? fullText.substring(0, text.length - 1) : fullText.substring(0, text.length + 1)
 
@@ -30,7 +32,7 @@ export const Banner = () => {
             setLoopNum(loopNum + 1);
             setDelta(500);
         }
-    }, [loopNum, isDeleting, text, period]); 
+    }, [loopNum, isDeleting, text, period]); // Added 'toRotate' to dependencies
 
     useEffect(() => {
         let ticker = setInterval(() => {
@@ -41,8 +43,6 @@ export const Banner = () => {
             clearInterval(ticker);
         };
     }, [delta, tick]);
-
-    const toRotate = ["Software Developer", "Backend Developer"];
 
     return (
         <section className="banner" id="home">
