@@ -14,12 +14,14 @@ export const Banner = () => {
     const period = 2000;
 
     useEffect (() => {
-        let ticker = setInterval(() =>{
-         tick();
-        },delta)
-
-        return () => { clearInterval(ticker)};
-    }, [text])
+        let ticker = setInterval(() => {
+            tick();
+        }, delta);
+    
+        return () => {
+            clearInterval(ticker);
+        };
+    }, [text, delta]);
 
     const tick = () =>
     {
