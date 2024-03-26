@@ -12,7 +12,6 @@ export const Banner = () => {
     const [delta, setDelta] = useState(300 - Math.random() * 100);
     const period = 2000;
 
-    // Moved 'toRotate' inside the useCallback
     const tick = useCallback(() => {
         const toRotate = ["Software Developer", "Backend Developer"];
         let i = loopNum % toRotate.length;
@@ -32,7 +31,7 @@ export const Banner = () => {
             setLoopNum(loopNum + 1);
             setDelta(500);
         }
-    }, [loopNum, isDeleting, text, period]); // Added 'toRotate' to dependencies
+    }, [loopNum, isDeleting, text, period]);
 
     useEffect(() => {
         let ticker = setInterval(() => {

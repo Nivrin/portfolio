@@ -33,7 +33,7 @@ export const NavBar = () => {
     }, [])
 
     const openPdf= () => {
-        {window.open(nivCV, '_blank')}
+        window.open(nivCV, '_blank');
     };
 
     const handleConnectButtonClick = () => {
