@@ -1,0 +1,12 @@
+/* Default styling for social icons */
+.social-icon {
+    display: inline-block;
+    margin: 0 auto; /* Center horizontally by default */
+}
+
+/* Additional styling for social icons in the navigation bar */
+.navbar-social .social-icon {
+    display: inline-block;
+    margin: 0; /* Reset margin for navigation bar */
+    margin-left: 14px; /* Adjust spacing if needed */
+}

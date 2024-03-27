@@ -4,16 +4,18 @@ import { NavBar } from './components/NavBar';
 import { Banner } from './components/Banner';
 import { Skills } from './components/Skills';
 import { About } from './components/About';
+import SocialButtons from './components/SocialButtons';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <div className="App">
-      <NavBar/>
-      <Banner/>
-      <About/>
-      <Skills/>
+      <NavBar />
+      <Banner />
+      <About />
+      <Skills />
+      {/* <SocialButtons/> */}
     </div>
   );
 }

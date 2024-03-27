@@ -1,24 +1,18 @@
 import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from '../assets/img/rimon.png';
-import linkedinIcon from '../assets/img/nav-icon1.svg';
-import facebookIcon from '../assets/img/nav-icon2.svg';
 import { BoxArrowInUpRight } from "react-bootstrap-icons";
 import nivCV from '../assets/cv/niv.pdf';
-import phoneIcon from '../assets/img/phone-icon.png';
-import mailIcon from '../assets/img/email-svgrepo-com.svg';
-
 import {
     BrowserRouter as Router, 
 } from "react-router-dom";
+import SocialButtons from './SocialButtons'; // Import the SocialButtons component
 import './NavBar.css';
 
 export const NavBar = () => {
     const [activeLink, setActiveLink] = useState('home');
     const [scrolled, setScrolled] = useState(false);
     const [isHovered, setIsHovered] = useState(false);
-    const [showCopiedNotification, setShowCopiedNotification] = useState(false);
-
 
     useEffect(() => {
         const onScroll = () => {
@@ -32,32 +26,18 @@ export const NavBar = () => {
         return () => window.removeEventListener("scroll", onScroll)
     }, [])
 
-    const openPdf= () => {
-        window.open(nivCV, '_blank');
+    const openPdf = () => {
+        window.open(nivCV)
+        const link = document.createElement('a');
+        link.href = nivCV; 
+        link.target = '_blank';
+        link.download = 'Niv Rimon Software Developer CV.pdf'; 
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
     };
-
-    const handleConnectButtonClick = () => {
-        window.location.href = 'mailto:nivrimn@gmail.com';
-    };
-
-    
-    const handlePhoneClick = () => {
-        const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
-        if (isMobile) {
-            window.location.href = "tel:+972586490590"; 
-        } else {
-            navigator.clipboard.writeText("+972586490590");
-            setShowCopiedNotification(true);
-            setTimeout(() => {
-                setShowCopiedNotification(false);
-            }, 2000); // Hide notification after 2 seconds
-        }
-    };
-    
-
 
     return (
-
         <Router>
             <Navbar expand="md" className={scrolled ? "scrolled" : ""}>
                 <Container>
@@ -74,13 +54,7 @@ export const NavBar = () => {
                             <Nav.Link href="#skills" className={activeLink === 'skills' ? 'active navbar-link' : 'navbar-link'} onClick={() => setActiveLink('skills')}>Skills</Nav.Link>       
                         </Nav>
                         <span className="navbar-text">
-                            <div className="social-icon">
-                                <a href="https://www.linkedin.com/in/niv-rimon/"><img src={linkedinIcon} alt="linkedin-icon" /></a>
-                                <a href="https://www.facebook.com/niv.rimon"><img src={facebookIcon} alt="facebook-icon" /></a>
-                                <a href="#email" onClick={handleConnectButtonClick}> <img src={mailIcon} alt="mail-icon" /></a>
-                                <a href="#phone" onClick={handlePhoneClick}><img src={phoneIcon} alt="call-me" /></a>
-                            {showCopiedNotification && <div className="copied-notification">Phone number copied!</div>}
-                            </div>
+                           <SocialButtons inNavbar={true} />
                             <button
                                 className="vvd"
                                 onMouseOver={() => setIsHovered(true)}
@@ -93,5 +67,5 @@ export const NavBar = () => {
                 </Container>
             </Navbar>
         </Router>
-    )
-}
+    );
+};
