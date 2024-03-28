@@ -28,7 +28,6 @@ export const NavBar = () => {
 
     const openPdf = () => {
         window.open(nivCV, '_blank')
-        
         const link = document.createElement('a');
         link.href = nivCV; 
         link.target = '_blank';

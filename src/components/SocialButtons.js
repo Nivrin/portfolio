@@ -6,7 +6,7 @@ import phoneIcon from '../assets/img/phone-icon.png';
 
 import './SocialButtons.css'; 
 
-const SocialButtons = ({inNavbar}) => {
+const SocialButtons = () => {
     const [showCopiedNotification, setShowCopiedNotification] = useState(false);
 
     const handleConnectButtonClick = () => {
@@ -27,7 +27,7 @@ const SocialButtons = ({inNavbar}) => {
     };
 
     return (
-        <div className={inNavbar ? "social-icon navbar-social" : "social-icon"}>
+        <div className="social-icon"> 
             <a href="https://www.linkedin.com/in/niv-rimon/"><img src={linkedinIcon} alt="linkedin-icon" /></a>
             <a href="https://www.facebook.com/niv.rimon"><img src={facebookIcon} alt="facebook-icon" /></a>
             <a href="#email" onClick={handleConnectButtonClick}> <img src={mailIcon} alt="mail-icon" /></a>
