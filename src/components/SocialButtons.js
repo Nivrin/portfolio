@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import linkedinIcon from '../assets/img/nav-icon1.svg';
-import facebookIcon from '../assets/img/nav-icon2.svg';
+// import facebookIcon from '../assets/img/nav-icon2.svg';
 import mailIcon from '../assets/img/email-svgrepo-com.svg';
 import phoneIcon from '../assets/img/phone-icon.png';
 
