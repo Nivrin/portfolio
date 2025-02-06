@@ -49,7 +49,7 @@ export const Banner = () => {
                 <Row className="align-items-center">
                     <Col xs={12} md={6} xl={7} >
                         <h1>{`Hi I'm Niv Rimon🎗️ -`}<span className="wrap"> {text} </span></h1>
-                        <p>I'm a software engineer. I have profound interest in software development, devops, AI, and everything in between.</p>
+                        <p>I'm a software developer. I have profound interest in software development, devops, AI, and everything in between.</p>
                         <ConnectButton />
                     </Col>
                     <Col xs={12} md={6} xl={5}>
