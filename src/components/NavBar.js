@@ -2,11 +2,11 @@ import React, { useState, useEffect } from "react";
 import { Navbar, Container, Nav } from "react-bootstrap";
 import logo from '../assets/img/rimon.png';
 import { BoxArrowInUpRight } from "react-bootstrap-icons";
-import nivCV from '../assets/cv/niv.pdf';
+import nivCV from '../assets/cv/Niv Rimon Software Developer CV.pdf';
 import {
     BrowserRouter as Router, 
 } from "react-router-dom";
-import SocialButtons from './SocialButtons'; // Import the SocialButtons component
+import SocialButtons from './SocialButtons'; 
 import './NavBar.css';
 
 export const NavBar = () => {
