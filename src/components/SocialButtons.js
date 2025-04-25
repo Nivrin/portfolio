@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import linkedinIcon from '../assets/img/nav-icon1.svg';
 import mailIcon from '../assets/img/email-svgrepo-com.svg';
 import phoneIcon from '../assets/img/phone-icon.png';
+import githubIcom from '../assets/img/github-icon.svg';
 
 import './SocialButtons.css'; 
 
@@ -30,6 +31,7 @@ const SocialButtons = () => {
             <a href="https://www.linkedin.com/in/niv-rimon/"><img src={linkedinIcon} alt="linkedin-icon" /></a>
             <a href="#email" onClick={handleConnectButtonClick}> <img src={mailIcon} alt="mail-icon" /></a>
             <a href="#phone" onClick={handlePhoneClick}><img src={phoneIcon} alt="call-me" /></a>
+            <a href="https://github.com/Nivrin"><img src={githubIcom} alt="github-icon" /></a>
             {showCopiedNotification && <div className="copied-notification">Phone number copied!</div>}
         </div>
     );
