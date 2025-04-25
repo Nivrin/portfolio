@@ -16,7 +16,7 @@ export const About = () => {
           </Col>
             <Col xs={12} md={6} xl={7}>
               <p>I am an experienced Software Developer with a background in both 
-                an IDF technology unit and a small startup. Throughout my career, 
+                an IDF technology unit and early-stage startups. Throughout my career, 
                 I have worked with a diverse range of technologies, specializing
                  in backend development. Currently, I am serving full-time in the reserve military.
                  </p>
