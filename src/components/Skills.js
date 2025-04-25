@@ -15,6 +15,7 @@ import S3 from '../assets/img/Simple Storage Service.svg';
 import aws from '../assets/img/aws.svg';
 import react from '../assets/img/react-2.svg';
 import rabbitmq from '../assets/img/rabbitmq.svg'
+import mysql from '../assets/img/mysql-svgrepo-com.svg'
 
 import './Skills.css';
  
@@ -43,12 +44,13 @@ export const Skills = () => {
                 <SkillItem image={fastapi} altText="FastAPI" />
                 <SkillItem image={rabbitmq} altText="RabbitMQ" />
                 <SkillItem image={aws} altText="AWS" />
+                <SkillItem image={ecs} altText="ECS" />
                 <SkillItem image={kubernetes} altText="Kubernetes" />
                 <SkillItem image={docker} altText="Docker" />
                 <SkillItem image={cicd} altText="CI/CD" />
                 <SkillItem image={postgresql} altText="PostgreSQL" />
-                <SkillItem image={ecs} altText="ECS" />
                 <SkillItem image={S3} altText="S3" />
+                <SkillItem image={mysql} altText="MySQL" />
                 <SkillItem image={react} altText="React.js" />
               </Carousel>
             </div>
