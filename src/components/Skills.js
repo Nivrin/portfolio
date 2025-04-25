@@ -7,12 +7,14 @@ import python from "../assets/img/python1.svg";
 import csharp from "../assets/img/csharp.svg";
 import fastapi from "../assets/img/fastapi.svg";
 import kubernetes from "../assets/img/kubernetes.svg";
+import ecs from '../assets/img/ecs.svg'
 import docker from "../assets/img/docker.svg";
 import cicd from "../assets/img/cicd.svg";
 import postgresql from '../assets/img/postgresql.svg';
-import mongodb from '../assets/img/mongodb.svg';
-import gke from '../assets/img/google-gke.svg';
+import S3 from '../assets/img/Simple Storage Service.svg';
+import aws from '../assets/img/aws.svg';
 import react from '../assets/img/react-2.svg';
+import rabbitmq from '../assets/img/rabbitmq.svg'
 
 import './Skills.css';
  
@@ -39,12 +41,14 @@ export const Skills = () => {
                 <SkillItem image={python} altText="Python" />
                 <SkillItem image={csharp} altText="C#" />
                 <SkillItem image={fastapi} altText="FastAPI" />
-                <SkillItem image={gke} altText="GKE" />
+                <SkillItem image={rabbitmq} altText="RabbitMQ" />
+                <SkillItem image={aws} altText="AWS" />
                 <SkillItem image={kubernetes} altText="Kubernetes" />
                 <SkillItem image={docker} altText="Docker" />
                 <SkillItem image={cicd} altText="CI/CD" />
                 <SkillItem image={postgresql} altText="PostgreSQL" />
-                <SkillItem image={mongodb} altText="MongoDB" />
+                <SkillItem image={ecs} altText="ECS" />
+                <SkillItem image={S3} altText="S3" />
                 <SkillItem image={react} altText="React.js" />
               </Carousel>
             </div>
